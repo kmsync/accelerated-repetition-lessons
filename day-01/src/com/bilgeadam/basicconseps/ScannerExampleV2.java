@@ -1,8 +1,8 @@
-package com.bilgeadam.basicconseps.scannerExample;
+package com.bilgeadam.basicconseps;
 
 import java.util.Scanner;
 
-public class scannerExample {
+public class ScannerExampleV2 {
 
     public static void main(String[] args) {
 
