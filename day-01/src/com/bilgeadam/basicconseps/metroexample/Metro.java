@@ -29,41 +29,62 @@ public class Metro {
                 case 3:
                     metroyaBin();
                     break;
-                default:
+                case 4:
+                    sistemdenCikis();
                     break;
+                default:
+                    System.out.println("Seçim yanlış. Tekrar seçiniz!");
             }
 
         } while (secim != 4);
     }
 
+    private static void sistemdenCikis() {
+        System.exit(0);
+    }
+
     private static void metroyaBin() {
 
         System.out.println("Abone durumuzunu seçiniz: \t\n1- İndirimli Bilet \t\n2- Tam Bilet");
-        scanner aboneSecim = scanner.nextInt();
+        int aboneSecim = scanner.nextInt();
 
         if (aboneSecim == 1) {
             System.out.println("İndirimli Bilet! Metroya Hoşgeldiniz!");
-            bakiye -= 3.5;
-            System.out.println("Kalan: " + bakiyeGoster(););
+
+            if (bakiye < 3.50) {
+                System.out.println("Yetersiz bakiye! Öncelikle bakiye yükleyiniz!");
+            } else {
+                bakiye -= 3.50;
+                System.out.println("Kalan " + bakiyeGoster());
+            }
         } else if (aboneSecim == 2) {
+
+            if (bakiye < 6.75) {
+                System.out.println("Yetersiz bakiye! Öncelikle para yükleyiniz!");
+            } else {
+                System.out.println("Tam Bilet! Metroya Hoşgeldiniz!");
+                bakiye -= 6.75;
+            }
+            System.out.println("Kalan " + bakiyeGoster());
         } else {
             System.out.println("Hatalı seçim. Tekrar deneyiniz!");
             metroyaBin();
         }
     }
 
+
     private static void kartaBakiyeYukle() {
 
         System.out.println("Yüklemek istediğiniz miktarı giriniz: ");
-
         bakiye += scanner.nextDouble();
-
         bakiyeGoster();
 
     }
 
-    private static void bakiyeGoster() {
+    private static String bakiyeGoster() {
 
-        System.out.println("Bakiyeniz: " + bakiye + " TL");
+        String bakiyeStr = "Bakiyeniz: " + bakiye + " TL";
+        System.out.println(bakiyeStr);
+        return bakiyeStr;
     }
 }
