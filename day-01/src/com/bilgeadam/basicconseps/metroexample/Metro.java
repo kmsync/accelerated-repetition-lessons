@@ -12,7 +12,7 @@ public class Metro {
         int secim = 0;
 
         do {
-            System.out.println("1- kart bakiyesini göster");
+            System.out.println("1- Kart bakiyesini göster");
             System.out.println("2- Karta para yükle");
             System.out.println("3- Metroya bin");
             System.out.println("4- Sistemden çıkış");
